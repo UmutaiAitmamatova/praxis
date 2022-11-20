@@ -14,6 +14,16 @@ function App() {
   }, []);
   console.log(pizzas);
 
+  // React.useEffect(() => {
+  //   fetch('http://localhost:3000/db.json').then((resp) => resp.json()).then(json => {
+  //     setPizzas(json.pizzas);
+  //   })
+  //   axios.get('http://localhost:3000/db.json').then(({ data }) => {
+  //     setPizzas(data.pizzas);
+  //   });
+  // }, []);
+
+
   return (
     <div className="App">
       <div className="wrapper">
@@ -22,7 +32,8 @@ function App() {
         <div className="content">
           <Routes>
             <Route>
-              <Route path="/" element={<Home />} exact />
+              {/* <Route path="/" reder={() => <Home items={pizzas}/>} exact /> */}
+              <Route path='/' element={<Home items={pizzas}/>} exact/>
               <Route path="/cart" element={<Cart />} exact />
             </Route>
           </Routes>
